@@ -1,0 +1,8 @@
+C:\Users\HP\source\repos\Course 18 , Connection with DataBase in C#\Parameterized Query\bin\Debug\Parameterized Query.exe.config
+C:\Users\HP\source\repos\Course 18 , Connection with DataBase in C#\Parameterized Query\bin\Debug\Parameterized Query.exe
+C:\Users\HP\source\repos\Course 18 , Connection with DataBase in C#\Parameterized Query\bin\Debug\Parameterized Query.pdb
+C:\Users\HP\source\repos\Course 18 , Connection with DataBase in C#\Parameterized Query\obj\Debug\Parameterized Query.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\Course 18 , Connection with DataBase in C#\Parameterized Query\obj\Debug\Parameterized Query.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\Course 18 , Connection with DataBase in C#\Parameterized Query\obj\Debug\Parameterized Query.exe
+C:\Users\HP\source\repos\Course 18 , Connection with DataBase in C#\Parameterized Query\obj\Debug\Parameterized Query.pdb
+C:\Users\HP\source\repos\Course 18 , Connection with DataBase in C#\Parameterized Query\obj\Debug\Parameterized Query.exe.config
