@@ -23,7 +23,7 @@ internal class Program
                 string Phone = (string)reader["Phone"];
                 string Address = (string)reader["Address"];
                 int CountryId = (int)reader["Countryid"];
-
+                // Print 
                 Console.WriteLine($"Contact Id : {ContactId} ");
                 Console.WriteLine($"Name       : {FirstName} {LastName} ");
                 Console.WriteLine($"Email      : {Email} ");
