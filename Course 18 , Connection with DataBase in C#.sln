@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37216.2 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Course 18 , Connection with DataBase in C#", "Course 18 , Connection with DataBase in C#.csproj", "{D0C4F005-54A4-4DCD-8453-F53C0AA19463}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0C4F005-54A4-4DCD-8453-F53C0AA19463}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0C4F005-54A4-4DCD-8453-F53C0AA19463}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0C4F005-54A4-4DCD-8453-F53C0AA19463}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0C4F005-54A4-4DCD-8453-F53C0AA19463}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E90545E5-A21C-4A74-8C7A-EE5F533004CC}
+	EndGlobalSection
+EndGlobal
