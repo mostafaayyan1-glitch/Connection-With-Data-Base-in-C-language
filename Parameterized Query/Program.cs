@@ -1,20 +1,15 @@
 ﻿using System;
 using System.ComponentModel.Design;
 using System.Data.SqlClient;
-
 internal class Program
 {
     static string StringConnection = "Server = . ; DataBase = ContactsDB ; User Id = sa ; Password = 123456;";
-
     static void PrintAllContactsWithFirstName(string FirstName)
     {
         SqlConnection connection = new SqlConnection(StringConnection);
         string Query = "Select * From Contacts Where FirstName = @FirstName";
         SqlCommand command = new SqlCommand(Query, connection);
-
-        // تصليح: تم حذف المسافة الزائدة من النص
         command.Parameters.AddWithValue("@FirstName", FirstName);
-
         try
         {
             connection.Open();
@@ -45,17 +40,13 @@ internal class Program
             Console.WriteLine("Error , " + EX.Message);
         }
     }
-
     static void PrintAllContactsWithFirstNameAndContryId(string FirstName, int id)
     {
         SqlConnection connection = new SqlConnection(StringConnection);
         string Query = "Select * From Contacts Where FirstName = @FirstName and CountryId = @id";
         SqlCommand command = new SqlCommand(Query, connection);
-
         command.Parameters.AddWithValue("@FirstName", FirstName);
-
         command.Parameters.AddWithValue("@id", id);
-
         try
         {
             connection.Open();
@@ -86,10 +77,8 @@ internal class Program
             Console.WriteLine("Error , " + EX.Message);
         }
     }
-
     static void Main(string[] args)
     {
-        // تجربة التابع بعد التصليح
         PrintAllContactsWithFirstNameAndContryId("Jane", 1);
         Console.ReadKey();
     }
