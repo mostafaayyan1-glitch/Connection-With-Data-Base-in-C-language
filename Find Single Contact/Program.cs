@@ -39,8 +39,8 @@ internal class Program
             {
                 IsFound = false;
             }
-            connection.Close();
             reader.Close();
+            connection.Close();
         }
         catch (Exception EX)
         {
