@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Data.SqlClient;
-using System.IO;
-using System.Net.Http.Headers;
 internal class Program
     {
     static string StringConnection = "Server = .; DataBase = ContactsDB ; User Id = sa ; Password = 123456;";
@@ -119,5 +117,6 @@ internal class Program
         Console.WriteLine("-------- contain with 'ae'");
         SearchConatactsContain("ae");
         Console.ReadKey();
+        // Aspiring Developer
         }
     }
