@@ -23,7 +23,8 @@ internal class Program
                 FirstName = "";
             }
             connection.Close();
-        }catch(Exception Ex)
+        }
+        catch(Exception Ex)
         {
             Console.WriteLine("Error , " + Ex.Message);
         }
