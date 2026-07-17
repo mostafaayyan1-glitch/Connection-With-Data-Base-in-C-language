@@ -47,7 +47,6 @@ namespace Creat_Data_Table_With_Properties_for_All_Column
             {
                 ColumnName = "Name",
                 Caption = "Employee Name",
-                AutoIncrementStep = 1,
                 ReadOnly = false ,
                 Unique = false ,
                 DataType = typeof(string)
@@ -55,9 +54,21 @@ namespace Creat_Data_Table_With_Properties_for_All_Column
             employeesTable.Columns.Add(Column);
             employeesTable.Rows.Add(null, "Mustafa");
             employeesTable.Rows.Add(null, "Adnan");
+            Column = new DataColumn
+            {
+                ColumnName = "Country",
+                Caption = "Country Employee",
+                ReadOnly = false,
+                Unique = false,
+                DataType = typeof (string)
+            };
+            employeesTable.Columns.Add(Column);
+            employeesTable.Rows.Add(null, "Mustafa", "Syria");
+            employeesTable.Rows.Add(null, "Adnan", "Syria");
+            employeesTable.Rows.Add(null, "Mohammed", "Syria");
             foreach(DataRow row in employeesTable.Rows)
             {
-                Console.WriteLine($"Id : {row["Id"]} , Name : {row["Name"]} ");
+                Console.WriteLine($"Id : {row["Id"]} , Name : {row["Name"]}, Country : {row["Country"]} ");
             }
             Console.ReadKey();
         }
