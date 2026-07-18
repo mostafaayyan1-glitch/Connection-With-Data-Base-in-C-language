@@ -25,7 +25,7 @@ namespace Creat_Data_Table_In_C__And_Add_Primary_Key
             employeesTable.PrimaryKey = primaryKeycoulmn;
             // 3. Populate the DataTable with row records
             employeesTable.Rows.Add(1, "Mustafa Ayyan", "Syria", 2000, DateTime.Now);
-            employeesTable.Rows.Add(1, "Adnan Ayyan", "Lebanon", 6000, DateTime.Now);
+            employeesTable.Rows.Add(2, "Adnan Ayyan", "Lebanon", 6000, DateTime.Now);
             employeesTable.Rows.Add(3, "Muhammed Adel", "Italy", 3000, DateTime.Now);
             employeesTable.Rows.Add(4, "Mosaab Adnan", "Syria", 6000, DateTime.Now);
             employeesTable.Rows.Add(5, "Yousef Muhammed", "Palestine", 2000, DateTime.Now);
