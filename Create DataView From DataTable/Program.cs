@@ -34,12 +34,12 @@ namespace Create_DataView_From_DataTable
                 Console.WriteLine("{0} , {1} , {2} , {3} ", EmpemoyeesView[i][0], EmpemoyeesView[i][1], EmpemoyeesView[i][2], EmpemoyeesView[i][3]);
             }
             // Creat Query to Select Many Employees 
-           // Console.WriteLine(",, After Filtering Data Table Bu Data View");
-           // EmpemoyeesView.RowFilter = "Country = 'Syria' Or Country = 'Jordan' ";
-           // for (int i = 0; i < EmpemoyeesView.Count; i++)
-           // {
-           //     Console.WriteLine("{0} , {1} , {2} , {3} ", EmpemoyeesView[i][0], EmpemoyeesView[i][1], EmpemoyeesView[i][2], EmpemoyeesView[i][3]);
-           // }
+            Console.WriteLine(",, After Filtering Data Table Bu Data View");
+            EmpemoyeesView.RowFilter = "Country = 'Syria' Or Country = 'Jordan' ";
+            for (int i = 0; i < EmpemoyeesView.Count; i++)
+            {
+                Console.WriteLine("{0} , {1} , {2} , {3} ", EmpemoyeesView[i][0], EmpemoyeesView[i][1], EmpemoyeesView[i][2], EmpemoyeesView[i][3]);
+            }
             // Sorting Data In Data View
             EmpemoyeesView.Sort = "Name Asc";
             Console.WriteLine("After Sort Data Table By Data View");

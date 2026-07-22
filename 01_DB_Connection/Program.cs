@@ -10,7 +10,7 @@ internal class Program
         {
             SqlConnection connection = new SqlConnection(StringConnection);
             string Query = "Select * From Contacts " +
-                " Where contactid in ( 1 , 3 , 4 )";
+                " Where ContactId in ( 1 , 3 , 4 )";
             SqlCommand command = new SqlCommand(Query, connection);
             connection.Open();
             SqlDataReader reader = command.ExecuteReader();
@@ -22,7 +22,7 @@ internal class Program
                 string Email = (string)reader["Email"];
                 string Phone = (string)reader["Phone"];
                 string Address = (string)reader["Address"];
-                int CountryId = (int)reader["Countryid"];
+                int CountryId = (int)reader["CountryId"];
                 // Print 
                 Console.WriteLine($"Contact Id : {ContactId} ");
                 Console.WriteLine($"Name       : {FirstName} {LastName} ");

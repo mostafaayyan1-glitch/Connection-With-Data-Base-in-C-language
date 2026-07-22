@@ -123,7 +123,6 @@ namespace Create_Data_Table_And_Insert_Data
             Console.WriteLine($"Min Salary     : {min}");
             Console.WriteLine($"Max Salary     : {max}");
         }
-
         #endregion
     }
 }

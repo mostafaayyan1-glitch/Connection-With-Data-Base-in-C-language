@@ -66,6 +66,7 @@ namespace Creat_Data_Table_With_Properties_for_All_Column
             employeesTable.Rows.Add(null, "Mustafa", "Syria");
             employeesTable.Rows.Add(null, "Adnan", "Syria");
             employeesTable.Rows.Add(null, "Mohammed", "Syria");
+            // Foreach loop
             foreach(DataRow row in employeesTable.Rows)
             {
                 Console.WriteLine($"Id : {row["Id"]} , Name : {row["Name"]}, Country : {row["Country"]} ");

@@ -2,7 +2,6 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
-
 namespace Access_Data_Country
 {
     /// <summary>
@@ -49,10 +48,8 @@ namespace Access_Data_Country
                     Console.WriteLine("Error, " + Ex.Message);
                 }
             }
-
             return IsFound;
         }
-
         /// <summary>
         /// Inserts a new country record into the database and returns its newly generated ID.
         /// </summary>
@@ -66,19 +63,16 @@ namespace Access_Data_Country
             string Query = @"INSERT INTO Countries (CountryName, PhoneCode, CodeCountries) 
                              VALUES (@CountryName, @PhoneCode, @CodeCountries);
                              SELECT SCOPE_IDENTITY();";
-
             using (SqlConnection connection = new SqlConnection(Sittengs.Connection_String))
             using (SqlCommand command = new SqlCommand(Query, connection))
             {
                 command.Parameters.AddWithValue("@CountryName", CountryName);
                 command.Parameters.AddWithValue("@PhoneCode", string.IsNullOrEmpty(PhoneCode) ? DBNull.Value : (object)PhoneCode);
                 command.Parameters.AddWithValue("@CodeCountries", string.IsNullOrEmpty(CodeCountries) ? DBNull.Value : (object)CodeCountries);
-
                 try
                 {
                     connection.Open();
                     object Result = command.ExecuteScalar();
-
                     if (Result != null && int.TryParse(Result.ToString(), out int Id))
                     {
                         CountryId = Id;
@@ -92,7 +86,6 @@ namespace Access_Data_Country
 
             return CountryId;
         }
-
         /// <summary>
         /// Updates the details of an existing country in the database.
         /// </summary>
@@ -109,7 +102,6 @@ namespace Access_Data_Country
                                  CodeCountries = @CodeCountries, 
                                  PhoneCode = @PhoneCode 
                              WHERE CountryId = @CountryId";
-
             using (SqlConnection connection = new SqlConnection(Sittengs.Connection_String))
             using (SqlCommand command = new SqlCommand(Query, connection))
             {
@@ -117,7 +109,6 @@ namespace Access_Data_Country
                 command.Parameters.AddWithValue("@CountryName", CountryName);
                 command.Parameters.AddWithValue("@CodeCountries", string.IsNullOrEmpty(CodeCountries) ? DBNull.Value : (object)CodeCountries);
                 command.Parameters.AddWithValue("@PhoneCode", string.IsNullOrEmpty(PhoneCode) ? DBNull.Value : (object)PhoneCode);
-
                 try
                 {
                     connection.Open();
@@ -128,10 +119,8 @@ namespace Access_Data_Country
                     Console.WriteLine("Error: " + Ex.Message);
                 }
             }
-
             return (Rows > 0);
         }
-
         /// <summary>
         /// Deletes a country record from the database using its ID.
         /// </summary>
@@ -141,12 +130,10 @@ namespace Access_Data_Country
         {
             int Rows = 0;
             string Query = "DELETE FROM Countries WHERE CountryId = @CountryId";
-
             using (SqlConnection connection = new SqlConnection(Sittengs.Connection_String))
             using (SqlCommand command = new SqlCommand(Query, connection))
             {
                 command.Parameters.AddWithValue("@CountryId", countryId);
-
                 try
                 {
                     connection.Open();
@@ -157,10 +144,8 @@ namespace Access_Data_Country
                     Console.WriteLine("Error: " + Ex.Message);
                 }
             }
-
             return (Rows > 0);
         }
-
         /// <summary>
         /// Retrieves all country records from the Countries table.
         /// </summary>
@@ -202,12 +187,10 @@ namespace Access_Data_Country
         {
             bool IsFound = false;
             string Query = "SELECT 1 FROM Countries WHERE CountryId = @CountryId";
-
             using (SqlConnection connection = new SqlConnection(Sittengs.Connection_String))
             using (SqlCommand command = new SqlCommand(Query, connection))
             {
                 command.Parameters.AddWithValue("@CountryId", Id);
-
                 try
                 {
                     connection.Open();
@@ -219,7 +202,6 @@ namespace Access_Data_Country
                     Console.WriteLine("Error, " + Ex.Message);
                 }
             }
-
             return IsFound;
         }
         /// <summary>
@@ -260,7 +242,6 @@ namespace Access_Data_Country
                     Console.WriteLine("Error, " + Ex.Message);
                 }
             }
-
             return IsFound;
         }
     }
