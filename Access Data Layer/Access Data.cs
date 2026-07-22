@@ -34,9 +34,7 @@ namespace Access_Data_Layer
             using (SqlConnection connection = new SqlConnection(Sittengs.Connection_String))
             using (SqlCommand command = new SqlCommand(Query, connection))
             {
-                // تم تصحيح الفراغ الزائد هنا ليتطابق مع الاستعلام تماماً
                 command.Parameters.AddWithValue("@ContactId", Id);
-
                 try
                 {
                     connection.Open();
@@ -45,8 +43,6 @@ namespace Access_Data_Layer
                         if (reader.Read())
                         {
                             IsFound = true;
-
-                            // تجنب الـ NullReferenceException عبر التحقق من DBNull قبل التحويل
                             FirstName = reader["FirstName"] != DBNull.Value ? (string)reader["FirstName"] : "";
                             LastName = reader["LastName"] != DBNull.Value ? (string)reader["LastName"] : "";
                             Email = reader["Email"] != DBNull.Value ? (string)reader["Email"] : "";
@@ -60,14 +56,11 @@ namespace Access_Data_Layer
                 }
                 catch (Exception Ex)
                 {
-                    // للتطبيقات الكبيرة يفضل تسجيل الأخطاء في Event Log
                     Console.WriteLine("Error, " + Ex.Message);
                 }
             }
-
             return IsFound;
         }
-
         /// <summary>
         /// Inserts a new contact into the database and returns the newly generated ID.
         /// </summary>
@@ -87,7 +80,6 @@ namespace Access_Data_Layer
             string Query = @"INSERT INTO Contacts (FirstName, LastName, Email, Phone, Address, DateOfBirth, CountryId, ImagePath) 
                              VALUES (@FirstName, @LastName, @Email, @Phone, @Address, @DateOfBirth, @CountryId, @ImagePath);
                              SELECT SCOPE_IDENTITY();";
-
             using (SqlConnection connection = new SqlConnection(Sittengs.Connection_String))
             using (SqlCommand command = new SqlCommand(Query, connection))
             {
@@ -99,7 +91,6 @@ namespace Access_Data_Layer
                 command.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
                 command.Parameters.AddWithValue("@CountryId", CountryId);
                 command.Parameters.AddWithValue("@ImagePath", string.IsNullOrEmpty(ImagePath) ? DBNull.Value : (object)ImagePath);
-
                 try
                 {
                     connection.Open();
@@ -146,7 +137,6 @@ namespace Access_Data_Layer
                                  CountryId = @CountryId,
                                  ImagePath = @ImagePath
                              WHERE ContactId = @ContactId";
-
             using (SqlConnection connection = new SqlConnection(Sittengs.Connection_String))
             using (SqlCommand command = new SqlCommand(Query, connection))
             {
@@ -235,7 +225,6 @@ namespace Access_Data_Layer
 
             return dataTable;
         }
-
         /// <summary>
         /// Checks if a contact exists in the database by their unique ID.
         /// </summary>
